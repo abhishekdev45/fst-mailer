@@ -1,0 +1,26 @@
+version: '3'
+services:
+  
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+     - "3002:3000"
+    depends_on:
+     - backend 
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "4006:5000"
+    environment:
+      - PORT=${PORT}
+      - MONGO_URL=${MONGO_URL}
+      - JWT_SECRET=${JWT_SECRET}
+    
+
+  
+
