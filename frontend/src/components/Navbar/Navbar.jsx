@@ -39,7 +39,7 @@ const Navbar = () => {
         <div className="z-50 p-5 md:w-auto w-full flex justify-between h-full">
           <Link to="/_mailer">
             <img
-              src="https://res.cloudinary.com/dztkzhtla/image/upload/v1692620524/html%20mailer/Fst_Mailer_wpqpda.png"
+              src="https://firebasestorage.googleapis.com/v0/b/active-pillar-421905.appspot.com/o/fst.png?alt=media&token=6ae3cfdb-d30c-418a-80e1-b83b08fa8574"
               alt="logo"
               className="md:cursor-pointer w-40 md:w-48"
             />
@@ -117,7 +117,7 @@ const Navbar = () => {
               Sent
             </Link>
           </li>
-          
+
           <li>
             <Link
               to="/_templates"
