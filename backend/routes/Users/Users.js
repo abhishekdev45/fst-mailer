@@ -9,15 +9,15 @@ const mongoose = require('mongoose');
 // Create User
 router.post('/create-user', async (req, res) => {
     // Token Verification
-    // const token = req.headers.authorization;
-    // if (!token) {
-    //     return res.status(400).json({ success: false, message: "No token provided" });
-    // }
-    // let user = verifyToken(token);
+    const token = req.headers.authorization;
+    if (!token) {
+        return res.status(400).json({ success: false, message: "No token provided" });
+    }
+    let user = verifyToken(token);
     if (!user.success) {
         return res.status(400).json({ success: false, message: user.message });
     }
-    // const {  emailId, password, name, role } = req.body;
+
     const {  emailId, password, name, role } = req.body;
     if ( !emailId || !password || !name || !role) {
         return res.status(400).json({ success: false, message: "Please enter all fields." });

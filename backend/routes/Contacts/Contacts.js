@@ -42,7 +42,6 @@ router.post('/create-contact', asyncError(async (req, res) => {
 
         // Check if required fields are present
         if (!emailId || !name || !phone) {
-            console.log("object1")
             return res.status(400).json({ success: false, message: "Please provide emailId and name for each contact." });
         }
 
@@ -51,7 +50,6 @@ router.post('/create-contact', asyncError(async (req, res) => {
         const existingContactByPhone = await Contact.findOne({ phone });
 
         if (existingContact) {
-            console.log("object2")
             return res.status(400).json({ success: false, message: `Contact with emailId ${emailId} already exists.` });
         }
         if (existingContactByPhone) {
